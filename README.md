@@ -17,9 +17,11 @@ Tools Used:
 Usage:
 * Clone repository
 * If you have Maven installed, use 'mvn spring-boot:run'
-* | Action           | Method | Path                                 | Body                                      | HTTP response |
-  |------------------|--------|--------------------------------------|-------------------------------------------|---------------|
-  | Add a ski resort | POST   | http://localhost:8080/api/v2/resorts | {"name": "Snowy Hills","town": "Wiarton"} | 204           |
-  |                  |        |                                      |                                           |               |
-  |                  |        |                                      |                                           |               |
-  |                  |        |                                      |                                           |               |
+
+| Action              | Method | Path                                   | Body                                      | HTTP response |
+|---------------------|--------|----------------------------------------|-------------------------------------------|---------------|
+| Add a ski resort    | POST   | http://localhost:8080/api/v2/resorts   | {"name": "Snowy Hills","town": "Wiarton"} | 201           |
+| Get a ski resort    | GET    | http://localhost:8080/api/v2/resorts/1 |                                           | 200           |
+| Get all ski resorts | GET    | http://localhost:8080/api/v2/resorts   |                                           | 200           |
+| Update a ski resort | PUT    | http://localhost:8080/api/v2/resorts/1 | {"name": "Windy Hills","town": "Wiarton"} | 200           |
+| Delete a ski resort | DELETE | http://localhost:8080/api/v2/resorts/1 |                                           | 204           |
