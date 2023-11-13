@@ -1,10 +1,9 @@
 # Ski Resort Booking System API
- In this project, we implement the API for a booking system of a Ski Resort chain.
+ In this project, we implement the API for the booking system of a Ski Resort chain.
  
 Functional Requirements:
 * An admin can add a new ski resort to the system
-* An admin can retrieve or update the information of the ski resort
-* An admin can delete the ski resort from the system
+* An admin can retrieve/update/delete the information of the ski resort
 * An admin can add/update/retrieve/delete accommodation information for a  ski resort
 * An admin can add/update/retrieve/delete accommodation type information for a particular ski resort
 * A user can make a booking for one or more accomodations at a ski resort
@@ -18,3 +17,9 @@ Tools Used:
 Usage:
 * Clone repository
 * If you have Maven installed, use 'mvn spring-boot:run'
+* | Action           | Method | Path                                 | Body                                      | HTTP response |
+  |------------------|--------|--------------------------------------|-------------------------------------------|---------------|
+  | Add a ski resort | POST   | http://localhost:8080/api/v2/resorts | {"name": "Snowy Hills","town": "Wiarton"} | 204           |
+  |                  |        |                                      |                                           |               |
+  |                  |        |                                      |                                           |               |
+  |                  |        |                                      |                                           |               |

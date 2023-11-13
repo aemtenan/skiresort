@@ -26,6 +26,9 @@ replay_pid*
 # IntelliJ
 out/
 .idea
+**/.idea/
+*/.idea/*
+*/.idea/**
 *.iws
 *.iml
 *.ipr
@@ -33,3 +36,5 @@ out/
 # Java
 /target/
 */target/*
+*/target/**
+**/target/
