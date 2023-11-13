@@ -1,5 +1,5 @@
 # Ski Resort Booking System API
- In this project, we implement the API for a ski resort chain booking system.
+ In this project, we implement the API for a booking system of a Ski Resort chain.
  
 Functional Requirements:
 * An admin can add a new ski resort to the system

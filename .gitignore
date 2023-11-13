@@ -25,7 +25,11 @@ replay_pid*
 
 # IntelliJ
 out/
-.idea/
+.idea
+*.iws
+*.iml
+*.ipr
 
 # Java
-target/
+/target/
+*/target/*
