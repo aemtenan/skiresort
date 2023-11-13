@@ -18,6 +18,8 @@ Usage:
 * Clone repository
 * If you have Maven installed, use 'mvn spring-boot:run'
 
+Resort API Guide:
+
 | Action              | Method | Path                                   | Body                                      | HTTP response |
 |---------------------|--------|----------------------------------------|-------------------------------------------|---------------|
 | Add a ski resort    | POST   | http://localhost:8080/api/v2/resorts   | {"name": "Snowy Hills","town": "Wiarton"} | 201           |
@@ -25,3 +27,11 @@ Usage:
 | Get all ski resorts | GET    | http://localhost:8080/api/v2/resorts   |                                           | 200           |
 | Update a ski resort | PUT    | http://localhost:8080/api/v2/resorts/1 | {"name": "Windy Hills","town": "Wiarton"} | 200           |
 | Delete a ski resort | DELETE | http://localhost:8080/api/v2/resorts/1 |                                           | 204           |
+
+Accomodation API Guide:
+
+| Action                                         | Method | Path                                                  | Body                  | HTTP response |
+|------------------------------------------------|--------|-------------------------------------------------------|-----------------------|---------------|
+| Add an accommodation for a particular resort   | POST   | http://localhost:8080/api/v2/resorts/1/accommodations | {"occupied": "false"} | 201           |
+| Get all accommodations for a particular resort | GET    | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 200           |
+| Get a particular accommodation                 | GET    | http://localhost:8080/api/v2/accommodations/1         |                       | 200           |
