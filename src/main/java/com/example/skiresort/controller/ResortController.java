@@ -57,7 +57,8 @@ public class ResortController {
 
         resortToUpdate.setName(resort.getName());
         resortToUpdate.setTown(resort.getTown());
-        return new ResponseEntity<>(resortToUpdate, HttpStatus.OK);
+        Resort savedResort = resortRepository.save(resortToUpdate);
+        return new ResponseEntity<>(savedResort, HttpStatus.OK);
     }
 
     @DeleteMapping("/resorts/{id}")
