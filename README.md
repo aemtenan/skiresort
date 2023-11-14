@@ -28,7 +28,7 @@ Resort API Guide:
 | Update a ski resort | PUT    | http://localhost:8080/api/v2/resorts/1 | {"name": "Windy Hills","town": "Wiarton"} | 200           |
 | Delete a ski resort | DELETE | http://localhost:8080/api/v2/resorts/1 |                                           | 204           |
 
-Accomodation API Guide:
+Accommodation API Guide:
 
 | Action                                         | Method | Path                                                  | Body                  | HTTP response |
 |------------------------------------------------|--------|-------------------------------------------------------|-----------------------|---------------|
@@ -38,3 +38,12 @@ Accomodation API Guide:
 | Update a particular accommodation              | PUT    | http://localhost:8080/api/v2/accommodations/1         | {"occupied": "true"}  | 200           |
 | Delete a particular accommodation              | DELETE | http://localhost:8080/api/v2/accommodations/1         |                       | 204           |
 | Del all accommodations for a particular resort | DELETE | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 204           |
+
+AccommodationType API Guide:
+
+| Action                       | Method | Path                                              | Body                                        | HTTP response |
+|------------------------------|--------|---------------------------------------------------|---------------------------------------------|---------------|
+| Add an accommodation type    | POST   | http://localhost:8080/api/v2/accommodationtypes   | {"name": "cabin","rate": 100, "capacity":5} | 201           |
+| Get an accommodation type    | GET    | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 200           |
+| Update an accommodation type | PUT    | http://localhost:8080/api/v2/accommodationtypes/1 | {"name": "room","rate": 85, "capacity":2}   | 200           |
+| Delete an accommodation type | DELETE | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 204           |

@@ -20,11 +20,11 @@ public class Accommodation {
     @JsonIgnore
     private Resort resort;
 
-    //@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    //@JoinColumn(name = "accomodation_type_id", nullable = false)
-    //@OnDelete(action = OnDeleteAction.CASCADE)
-    //@JsonIgnore
-    //private AccomodationType accomodationType;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "accommodationtype_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private AccommodationType accommodationType;
 
     private String occupied;
 
@@ -52,11 +52,11 @@ public class Accommodation {
         this.resort = resort;
     }
 
-    //public AccomodationType getAccomodationType() {
-    //    return accomodationType;
-    //}
+    public AccommodationType getAccommodationType() {
+        return accommodationType;
+    }
 
-    //public void setAccomodationType(AccomodationType accomodationType) {
-    //    this.accomodationType = accomodationType;
-    //}
+    public void setAccommodationType(AccommodationType accommodationType) {
+        this.accommodationType = accommodationType;
+    }
 }

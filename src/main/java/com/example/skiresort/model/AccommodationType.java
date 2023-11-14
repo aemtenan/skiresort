@@ -2,24 +2,28 @@ package com.example.skiresort.model;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
-@Table(name = "accomodation_type")
-public class AccomodationType {
+@Table(name = "accommodationtypes")
+public class AccommodationType {
 
     @Id
     @GeneratedValue
-    @Column(name = "accomodation_type_id")
+    @Column(name = "accommodationtype_id")
     private Long id;
     private String name;
     private int rate;
     private int capacity;
 
-   // @OneToMany(mappedBy = "accomodation_type")
-   // private Set<Accomodation> accomodations = new HashSet<>();
+    AccommodationType(){
+    }
+
+    public AccommodationType(String name, int rate, int capacity){
+        this.name = name;
+        this.rate = rate;
+        this.capacity = capacity;
+    }
 
     public Long getId(){
         return id;
@@ -53,24 +57,15 @@ public class AccomodationType {
         this.capacity = capacity;
     }
 
-    /*
-    public Set<Accomodation> getAccomodations() {
-        return accomodations;
-    }
-
-    public void setAccomodations(Set<Accomodation> accomodations) {
-        this.accomodations = accomodations;
-    }*/
-
     @Override
     public boolean equals(Object o){
         if(this == o){
             return true;
         }
-        if(!(o instanceof AccomodationType)) {
+        if(!(o instanceof AccommodationType)) {
             return false;
         }
-        AccomodationType accomodationType = (AccomodationType) o;
+        AccommodationType accomodationType = (AccommodationType) o;
         return Objects.equals(this.id, accomodationType.id) && Objects.equals(this.name, accomodationType.name) && Objects.equals(this.rate, accomodationType.rate) && Objects.equals(this.capacity, accomodationType.capacity);
     }
 
