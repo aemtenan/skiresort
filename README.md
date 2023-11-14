@@ -30,14 +30,14 @@ Resort API Guide:
 
 Accommodation API Guide:
 
-| Action                                         | Method | Path                                                  | Body                  | HTTP response |
-|------------------------------------------------|--------|-------------------------------------------------------|-----------------------|---------------|
-| Add an accommodation for a particular resort   | POST   | http://localhost:8080/api/v2/resorts/1/accommodations | {"occupied": "false"} | 201           |
-| Get all accommodations for a particular resort | GET    | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 200           |
-| Get a particular accommodation                 | GET    | http://localhost:8080/api/v2/accommodations/1         |                       | 200           |
-| Update a particular accommodation              | PUT    | http://localhost:8080/api/v2/accommodations/1         | {"occupied": "true"}  | 200           |
-| Delete a particular accommodation              | DELETE | http://localhost:8080/api/v2/accommodations/1         |                       | 204           |
-| Del all accommodations for a particular resort | DELETE | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 204           |
+| Action                                                                           | Method | Path                                                  | Body                  | HTTP response |
+|----------------------------------------------------------------------------------|--------|-------------------------------------------------------|-----------------------|---------------|
+| Add an accommodation for a particular resort with a particular accomodation type | POST   | http://localhost:8080/api/v2/resorts/1/accommodationtypes/1/accommodations| {"occupied": "false"} | 201           |
+| Get all accommodations for a particular resort                                   | GET    | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 200           |
+| Get a particular accommodation                                                   | GET    | http://localhost:8080/api/v2/accommodations/1         |                       | 200           |
+| Update a particular accommodation                                                | PUT    | http://localhost:8080/api/v2/accommodations/1         | {"occupied": "true"}  | 200           |
+| Delete a particular accommodation                                                | DELETE | http://localhost:8080/api/v2/accommodations/1         |                       | 204           |
+| Del all accommodations for a particular resort                                   | DELETE | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 204           |
 
 AccommodationType API Guide:
 

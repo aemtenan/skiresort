@@ -1,8 +1,10 @@
 package com.example.skiresort.controller;
 
 import com.example.skiresort.model.Accommodation;
+import com.example.skiresort.model.AccommodationType;
 import com.example.skiresort.model.Resort;
 import com.example.skiresort.repository.AccommodationRepository;
+import com.example.skiresort.repository.AccommodationTypeRepository;
 import com.example.skiresort.repository.ResortRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,9 @@ public class AccommodationController {
 
     @Autowired
     AccommodationRepository accommodationRepository;
+
+    @Autowired
+    AccommodationTypeRepository accommodationTypeRepository;
 
     @GetMapping("/resorts/{id}/accommodations")
     public ResponseEntity<List<Accommodation>> getAccommodationsByResortId(@PathVariable("id") long id){
@@ -67,8 +72,8 @@ public class AccommodationController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping("/resorts/{id}/accommodations")
-    public ResponseEntity<Accommodation> addAccommodation(@PathVariable("id") long id, @RequestBody Accommodation accommodation){
+    @PostMapping("/resorts/{id}/accommodationtypes/{typeid}/accommodations")
+    public ResponseEntity<Accommodation> addAccommodation(@PathVariable("id") long id, @PathVariable("typeid") long typeid, @RequestBody Accommodation accommodation){
 
         Resort resort = resortRepository.findById(id).orElse(null);
 
@@ -76,7 +81,14 @@ public class AccommodationController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
+        AccommodationType accommodationType = accommodationTypeRepository.findById(typeid).orElse(null);
+
+        if(accommodationType==null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
         accommodation.setResort(resort);
+        accommodation.setAccommodationType(accommodationType);
 
         Accommodation accommodationToAdd = accommodationRepository.save(accommodation);
 
