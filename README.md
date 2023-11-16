@@ -18,6 +18,11 @@ Usage:
 * Clone repository
 * If you have Maven installed, use 'mvn spring-boot:run'
 
+ER diagram for Resort,Accommodation and AccommodationType Models
+
+![alt text](https://github.com/aemtenan/skiresort/blob/main/src/main/resources/static/ski-resort-er.png?raw=true)
+
+
 Resort API Guide:
 
 | Action              | Method | Path                                   | Body                                      | HTTP response |
