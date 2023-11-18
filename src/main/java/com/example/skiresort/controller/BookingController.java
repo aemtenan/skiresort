@@ -1,5 +1,6 @@
 package com.example.skiresort.controller;
 
+import com.example.skiresort.exception.DataConsistencyException;
 import com.example.skiresort.model.Accommodation;
 import com.example.skiresort.model.Booking;
 import com.example.skiresort.model.Resort;
@@ -92,6 +93,26 @@ public class BookingController {
 
         Booking bookingToAdd = bookingRepository.save(booking);
         return new ResponseEntity<>(bookingToAdd, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/booking/{id}")
+    public ResponseEntity<Booking> updateBooking(@PathVariable("id") long id, @RequestBody Booking booking){
+
+        Booking bookingToUpdate = bookingRepository.findById(id).orElse(null);
+
+        if(bookingToUpdate==null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        bookingToUpdate.setCheckInDate(booking.getCheckInDate());
+        bookingToUpdate.setCheckOutDate(booking.getCheckOutDate());
+
+        try {
+            Booking savedBooking = bookingService.updateBooking(bookingToUpdate);
+            return new ResponseEntity<>(savedBooking, HttpStatus.OK);
+        } catch (DataConsistencyException e) {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
     }
 
     @DeleteMapping("/booking/{id}")

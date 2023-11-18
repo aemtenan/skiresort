@@ -50,6 +50,14 @@ public class Booking {
         return checkOutDate;
     }
 
+    public void setCheckInDate(Date checkInDate){
+        this.checkInDate = checkInDate;
+    }
+
+    public void setCheckOutDate(Date checkOutDate){
+        this.checkOutDate = checkOutDate;
+    }
+
     public User getUser() {
         return user;
     }
