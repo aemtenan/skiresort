@@ -6,7 +6,7 @@ Functional Requirements:
 * An admin can retrieve/update/delete the information of the ski resort
 * An admin can add/update/retrieve/delete accommodation information for a  ski resort
 * An admin can add/update/retrieve/delete accommodation type information for a particular ski resort
-* A user can make a booking for one or more accomodations at a ski resort
+* A user can make a booking for one or more accommodations at a ski resort
 
 Tools Used:
 * Environment: OpenJDK 21
@@ -37,7 +37,7 @@ Accommodation API Guide:
 
 | Action                                                                           | Method | Path                                                  | Body                  | HTTP response |
 |----------------------------------------------------------------------------------|--------|-------------------------------------------------------|-----------------------|---------------|
-| Add an accommodation for a particular resort with a particular accomodation type | POST   | http://localhost:8080/api/v2/resorts/1/accommodationtypes/1/accommodations| {"occupied": "false"} | 201           |
+| Add an accommodation for a particular resort with a particular accommodation type| POST   | http://localhost:8080/api/v2/resorts/1/accommodationtypes/1/accommodations| {"occupied": "false"} | 201           |
 | Get all accommodations for a particular resort                                   | GET    | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 200           |
 | Get a particular accommodation                                                   | GET    | http://localhost:8080/api/v2/accommodations/1         |                       | 200           |
 | Update a particular accommodation                                                | PUT    | http://localhost:8080/api/v2/accommodations/1         | {"occupied": "true"}  | 200           |

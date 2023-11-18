@@ -6,12 +6,12 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
-@Table(name = "accomodations")
+@Table(name = "accommodations")
 public class Accommodation {
 
     @Id
     @GeneratedValue
-    @Column(name = "accomodation_id")
+    @Column(name = "accommodation_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
