@@ -31,6 +31,9 @@ public class Booking {
 
     private Date checkOutDate;
 
+    @Version
+    private Integer version;
+
     public Long getId(){
         return id;
     }
@@ -58,4 +61,12 @@ public class Booking {
     public Accommodation getAccommodation() {return accommodation;}
 
     public void setAccommodation(Accommodation accommodation) {this.accommodation = accommodation;}
+
+    private Integer getVersion(){
+       return version;
+    }
+
+    private void setVersion(Integer version){
+        this.version = version;
+    }
 }
