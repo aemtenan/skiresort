@@ -6,7 +6,8 @@ Functional Requirements:
 * An admin can retrieve/update/delete the information of the ski resort
 * An admin can add/update/retrieve/delete accommodation information for a  ski resort
 * An admin can add/update/retrieve/delete accommodation type information for a particular ski resort
-* A user can make a booking for one or more accommodations at a ski resort
+* A user can make a booking for accommodation at a ski resort
+* A user can retrieve saved bookings
 
 Tools Used:
 * Environment: OpenJDK 21
