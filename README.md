@@ -1,7 +1,8 @@
 # Ski Resort Booking System API
- In this project, we implement the API for the booking system of a Ski Resort chain.
- 
-Functional Requirements:
+In this project, we implement the API for the booking system of a Ski Resort chain.
+
+## Introduction 
+### Functional Requirements:
 * An admin can add a new ski resort to the system
 * An admin can retrieve/update/delete the information of the ski resort
 * An admin can add/update/retrieve/delete accommodation information for a  ski resort
@@ -9,22 +10,27 @@ Functional Requirements:
 * A user can make a booking for accommodation at a ski resort
 * A user can retrieve saved bookings
 
-Tools Used:
+### Tools Used:
 * Environment: OpenJDK 21
 * Framework: Spring Boot 3.1.5
 * Database: H2 in-memory db
 * Technologies: RESTful API, JPA for Data Access Layer
 
-Usage:
+### Instructions:
 * Clone repository
 * If you have Maven installed, use 'mvn spring-boot:run'
 
-ER diagram for Resort,Accommodation and AccommodationType Models
+## Design
+
+### Database Schema
+Based on the requirements above, we identify entities, attributes and the relationships between them to come up with 
+the following Entity Relationship diagram.
 
 ![alt text](https://github.com/aemtenan/skiresort/blob/main/src/main/resources/static/ski-resort-er.png?raw=true)
 
+### API Guide
 
-Resort API Guide:
+#### Resort API 
 
 | Action              | Method | Path                                   | Body                                      | HTTP response |
 |---------------------|--------|----------------------------------------|-------------------------------------------|---------------|
@@ -34,7 +40,7 @@ Resort API Guide:
 | Update a ski resort | PUT    | http://localhost:8080/api/v2/resorts/1 | {"name": "Windy Hills","town": "Wiarton"} | 200           |
 | Delete a ski resort | DELETE | http://localhost:8080/api/v2/resorts/1 |                                           | 204           |
 
-Accommodation API Guide:
+#### Accommodation API 
 
 | Action                                                                           | Method | Path                                                  | Body                  | HTTP response |
 |----------------------------------------------------------------------------------|--------|-------------------------------------------------------|-----------------------|---------------|
@@ -45,7 +51,7 @@ Accommodation API Guide:
 | Delete a particular accommodation                                                | DELETE | http://localhost:8080/api/v2/accommodations/1         |                       | 204           |
 | Del all accommodations for a particular resort                                   | DELETE | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 204           |
 
-AccommodationType API Guide:
+#### AccommodationType API
 
 | Action                       | Method | Path                                              | Body                                        | HTTP response |
 |------------------------------|--------|---------------------------------------------------|---------------------------------------------|---------------|
