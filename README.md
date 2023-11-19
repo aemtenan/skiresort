@@ -1,7 +1,8 @@
 # Ski Resort Booking System API
-In this project, we implement the API for the booking system of a Ski Resort chain.
 
 ## Introduction 
+In this project, we implement the API for the booking system of a Ski Resort chain.
+
 ### Functional Requirements:
 * An admin can add a new ski resort to the system
 * An admin can retrieve/update/delete the information of the ski resort
@@ -23,10 +24,16 @@ In this project, we implement the API for the booking system of a Ski Resort cha
 ## Design
 
 ### Database Schema
-Based on the requirements above, we identify entities, attributes and the relationships between them to come up with 
-the following Entity Relationship diagram.
+Based on the requirements above, we identify five entities: resorts, accommodations, accommodationtypes, users and bookings.
+Their attributes relationships are captured in the following Entity Relationship diagram.
 
 ![alt text](https://github.com/aemtenan/skiresort/blob/main/src/main/resources/static/ski-resort-er.png?raw=true)
+
+* Resorts: Defines information about each ski resort.
+* Accommodationtype: Defines the types of accommodations available at each ski resort.
+* Accommodation: Represents individual accommodation units. Each unit is associated with a specific resort and accommodationtype.
+* User: Represents a logged in user.
+* Booking: Represents a booking made by a user. Each booking is associated with a user and an accommodation unit.
 
 ### API Guide
 
@@ -59,3 +66,14 @@ the following Entity Relationship diagram.
 | Get an accommodation type    | GET    | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 200           |
 | Update an accommodation type | PUT    | http://localhost:8080/api/v2/accommodationtypes/1 | {"name": "room","rate": 85, "capacity":2}   | 200           |
 | Delete an accommodation type | DELETE | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 204           |
+
+## Todo
+
+* Add Admin and Non-admin roles to User
+
+## Enhancements for Production
+
+* For use in production, we should use a production grade database such as PostgreSQL instead of an in-memory database.
+* Since we are using an in-memory database, we do not need caching. However once we use PostgreSQL in production, we would need to implement caching using Redis for example to improve performance.
+* To keep the codebase simple, we did not implement authentication and authorization. For use in production, this needs to be added using a library such as Spring Security.
+* Add support to automatically retry a failed operation using a library such as Spring Retry.
