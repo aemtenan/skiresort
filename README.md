@@ -39,6 +39,7 @@ Their attributes relationships are captured in the following Entity Relationship
 
 * Add Admin and Non-admin roles to User.
 * Add Unit tests.
+* Document REST API using OpenAPI and Swagger UI. 
 
 ## Enhancements for Production
 
@@ -46,7 +47,7 @@ Their attributes relationships are captured in the following Entity Relationship
 * **Caching**: Since we are using an in-memory database, we do not need caching. However once we use PostgreSQL in production, we would need to implement caching using Redis for example to improve performance.
 * **Security**: To keep the codebase simple, we did not implement authentication and authorization. For use in production, this needs to be added using a library such as Spring Security.
 * **Retry**: Add support to automatically retry a failed operation using a library such as Spring Retry.
-* **Kubernetes**: Containerize the application and set it up for deployment in a Kubernetes cluster.
+* **Kubernetes**: Containerize the application and set it up for deployment in a Kubernetes cluster for reliability and scalability.
 
 ## API Guide
 
