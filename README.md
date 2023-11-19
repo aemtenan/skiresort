@@ -60,6 +60,15 @@ Their attributes relationships are captured in the following Entity Relationship
 | Update a ski resort | PUT    | http://localhost:8080/api/v2/resorts/1 | {"name": "Windy Hills","town": "Wiarton"} | 200           |
 | Delete a ski resort | DELETE | http://localhost:8080/api/v2/resorts/1 |                                           | 204           |
 
+### AccommodationType API
+
+| Action                       | Method | Path                                              | Body                                        | HTTP response |
+|------------------------------|--------|---------------------------------------------------|---------------------------------------------|---------------|
+| Add an accommodation type    | POST   | http://localhost:8080/api/v2/accommodationtypes   | {"name": "cabin","rate": 100, "capacity":5} | 201           |
+| Get an accommodation type    | GET    | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 200           |
+| Update an accommodation type | PUT    | http://localhost:8080/api/v2/accommodationtypes/1 | {"name": "room","rate": 85, "capacity":2}   | 200           |
+| Delete an accommodation type | DELETE | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 204           |
+
 ### Accommodation API 
 
 | Action                                                                           | Method | Path                                                  | Body                  | HTTP response |
@@ -71,20 +80,21 @@ Their attributes relationships are captured in the following Entity Relationship
 | Delete a particular accommodation                                                | DELETE | http://localhost:8080/api/v2/accommodations/1         |                       | 204           |
 | Del all accommodations for a particular resort                                   | DELETE | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 204           |
 
-### AccommodationType API
-
-| Action                       | Method | Path                                              | Body                                        | HTTP response |
-|------------------------------|--------|---------------------------------------------------|---------------------------------------------|---------------|
-| Add an accommodation type    | POST   | http://localhost:8080/api/v2/accommodationtypes   | {"name": "cabin","rate": 100, "capacity":5} | 201           |
-| Get an accommodation type    | GET    | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 200           |
-| Update an accommodation type | PUT    | http://localhost:8080/api/v2/accommodationtypes/1 | {"name": "room","rate": 85, "capacity":2}   | 200           |
-| Delete an accommodation type | DELETE | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 204           |
-
 ### User API
 
-| Action                       | Method | Path                                 | Body                                               | HTTP response |
-|------------------------------|--------|--------------------------------------|----------------------------------------------------|---------------|
-| Add a user                   | POST   | http://localhost:8080/api/v2/users   | {"userName": "user1","email": "user1@example.com"} | 201           |
-| Get a user                   | GET    | http://localhost:8080/api/v2/users/1 |                                                    | 200           |
-| Update a user                | PUT    | http://localhost:8080/api/v2/users/1 | {"userName": "user2","email": "user2@example.com"} | 200           |
-| Delete an accommodation type | DELETE | http://localhost:8080/api/v2/users/1 |                                                    | 204           |
+| Action        | Method | Path                                 | Body                                               | HTTP response |
+|---------------|--------|--------------------------------------|----------------------------------------------------|---------------|
+| Add a user    | POST   | http://localhost:8080/api/v2/users   | {"userName": "user1","email": "user1@example.com"} | 201           |
+| Get a user    | GET    | http://localhost:8080/api/v2/users/1 |                                                    | 200           |
+| Update a user | PUT    | http://localhost:8080/api/v2/users/1 | {"userName": "user2","email": "user2@example.com"} | 200           |
+| Delete a user | DELETE | http://localhost:8080/api/v2/users/1 |                                                    | 204           |
+
+### Booking API
+
+| Action                      | Method | Path                                                           | Body                                                                         | HTTP response |
+|-----------------------------|--------|----------------------------------------------------------------|------------------------------------------------------------------------------|---------------|
+| Add a booking               | POST   | http://localhost:8080/api/v2/users/1/accommodations/1/bookings | {"checkInDate": "2024-04-28T13:30:00","checkOutDate": "2024-04-29T11:00:00"} | 201           |
+| Get all bookings for a user | GET    | http://localhost:8080/api/v2/users/1/bookings                  |                                                                              |               |
+| Get a booking               | GET    | http://localhost:8080/api/v2/bookings/1                        |                                                                              | 200           |
+| Update a booking            | PUT    | http://localhost:8080/api/v2/bookings/1                        | {"checkInDate": "2024-04-27T13:30:00","checkOutDate": "2024-04-28T11:00:00"} | 200           |
+| Delete a booking            | DELETE | http://localhost:8080/api/v2/bookings/1                        |                                                                              | 204           |

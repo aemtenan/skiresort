@@ -44,7 +44,7 @@ public class BookingController {
         return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 
-    @GetMapping("/booking/{id}")
+    @GetMapping("/bookings/{id}")
     public ResponseEntity<Booking> getBooking(@PathVariable("id") long id){
 
         Booking booking = bookingRepository.findById(id).orElse(null);
@@ -95,7 +95,7 @@ public class BookingController {
         return new ResponseEntity<>(bookingToAdd, HttpStatus.CREATED);
     }
 
-    @PutMapping("/booking/{id}")
+    @PutMapping("/bookings/{id}")
     public ResponseEntity<Booking> updateBooking(@PathVariable("id") long id, @RequestBody Booking booking){
 
         Booking bookingToUpdate = bookingRepository.findById(id).orElse(null);
@@ -115,7 +115,7 @@ public class BookingController {
         }
     }
 
-    @DeleteMapping("/booking/{id}")
+    @DeleteMapping("/bookings/{id}")
     public ResponseEntity<HttpStatus> deleteBooking(@PathVariable("id") long id){
         bookingRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
