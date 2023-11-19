@@ -35,9 +35,22 @@ Their attributes relationships are captured in the following Entity Relationship
 * User: Represents a logged in user.
 * Booking: Represents a booking made by a user. Each booking is associated with a user and an accommodation unit.
 
-### API Guide
+## Todo
 
-#### Resort API 
+* Add Admin and Non-admin roles to User.
+* Add Unit tests.
+
+## Enhancements for Production
+
+* **PostgreSQL**: For use in production, we should use a production grade database such as PostgreSQL instead of an in-memory database.
+* **Caching**: Since we are using an in-memory database, we do not need caching. However once we use PostgreSQL in production, we would need to implement caching using Redis for example to improve performance.
+* **Security**: To keep the codebase simple, we did not implement authentication and authorization. For use in production, this needs to be added using a library such as Spring Security.
+* **Retry**: Add support to automatically retry a failed operation using a library such as Spring Retry.
+* **Kubernetes**: Containerize the application and set it up for deployment in a Kubernetes cluster.
+
+## API Guide
+
+### Resort API 
 
 | Action              | Method | Path                                   | Body                                      | HTTP response |
 |---------------------|--------|----------------------------------------|-------------------------------------------|---------------|
@@ -47,7 +60,7 @@ Their attributes relationships are captured in the following Entity Relationship
 | Update a ski resort | PUT    | http://localhost:8080/api/v2/resorts/1 | {"name": "Windy Hills","town": "Wiarton"} | 200           |
 | Delete a ski resort | DELETE | http://localhost:8080/api/v2/resorts/1 |                                           | 204           |
 
-#### Accommodation API 
+### Accommodation API 
 
 | Action                                                                           | Method | Path                                                  | Body                  | HTTP response |
 |----------------------------------------------------------------------------------|--------|-------------------------------------------------------|-----------------------|---------------|
@@ -58,7 +71,7 @@ Their attributes relationships are captured in the following Entity Relationship
 | Delete a particular accommodation                                                | DELETE | http://localhost:8080/api/v2/accommodations/1         |                       | 204           |
 | Del all accommodations for a particular resort                                   | DELETE | http://localhost:8080/api/v2/resorts/1/accommodations |                       | 204           |
 
-#### AccommodationType API
+### AccommodationType API
 
 | Action                       | Method | Path                                              | Body                                        | HTTP response |
 |------------------------------|--------|---------------------------------------------------|---------------------------------------------|---------------|
@@ -67,13 +80,11 @@ Their attributes relationships are captured in the following Entity Relationship
 | Update an accommodation type | PUT    | http://localhost:8080/api/v2/accommodationtypes/1 | {"name": "room","rate": 85, "capacity":2}   | 200           |
 | Delete an accommodation type | DELETE | http://localhost:8080/api/v2/accommodationtypes/1 |                                             | 204           |
 
-## Todo
+### User API
 
-* Add Admin and Non-admin roles to User
-
-## Enhancements for Production
-
-* For use in production, we should use a production grade database such as PostgreSQL instead of an in-memory database.
-* Since we are using an in-memory database, we do not need caching. However once we use PostgreSQL in production, we would need to implement caching using Redis for example to improve performance.
-* To keep the codebase simple, we did not implement authentication and authorization. For use in production, this needs to be added using a library such as Spring Security.
-* Add support to automatically retry a failed operation using a library such as Spring Retry.
+| Action                       | Method | Path                                 | Body                                               | HTTP response |
+|------------------------------|--------|--------------------------------------|----------------------------------------------------|---------------|
+| Add a user                   | POST   | http://localhost:8080/api/v2/users   | {"userName": "user1","email": "user1@example.com"} | 201           |
+| Get a user                   | GET    | http://localhost:8080/api/v2/users/1 |                                                    | 200           |
+| Update a user                | PUT    | http://localhost:8080/api/v2/users/1 | {"userName": "user2","email": "user2@example.com"} | 200           |
+| Delete an accommodation type | DELETE | http://localhost:8080/api/v2/users/1 |                                                    | 204           |
