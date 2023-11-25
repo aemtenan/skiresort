@@ -35,6 +35,12 @@ Their attributes relationships are captured in the following Entity Relationship
 * User: Represents a logged in user.
 * Booking: Represents a booking made by a user. Each booking is associated with a user and an accommodation unit.
 
+### Pagination and Filtering
+
+The APT to GET all resorts supports pagination and filtering. The default page size is 5 items. We can filter by town.
+
+![alt text](https://github.com/aemtenan/skiresort/blob/main/src/main/resources/static/filtering.png?raw=true)
+
 ## Todo
 
 * Add Admin and Non-admin roles to User.
@@ -49,7 +55,7 @@ Their attributes relationships are captured in the following Entity Relationship
 * **Retry**: Add support to automatically retry a failed operation using a library such as Spring Retry.
 * **Kubernetes**: Containerize the application and set it up for deployment in a Kubernetes cluster for reliability and scalability.
 
-## API Guide
+## API Reference
 
 ### Resort API 
 
