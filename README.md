@@ -20,6 +20,7 @@ In this project, we implement the API for the booking system of a Ski Resort cha
 ### Instructions:
 * Clone repository
 * If you have Maven installed, use 'mvn spring-boot:run'
+* The OpenAPI Swagger UI specification will be available at 'http://localhost:8080/swagger-ui/index.html'
 
 ## Design
 
@@ -45,7 +46,6 @@ The APT to GET all resorts supports pagination and filtering. The default page s
 
 * Add Admin and Non-admin roles to User.
 * Add Unit tests.
-* Document REST API using OpenAPI and Swagger UI. 
 
 ## Enhancements for Production
 
