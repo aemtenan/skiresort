@@ -8,8 +8,7 @@ In this project, we implement the API for the booking system of a Ski Resort cha
 * An admin can retrieve/update/delete the information of the ski resort
 * An admin can add/update/retrieve/delete accommodation information for a  ski resort
 * An admin can add/update/retrieve/delete accommodation type information for a particular ski resort
-* A user can make a booking for accommodation at a ski resort
-* A user can retrieve saved bookings
+* A user can make a booking for accommodation at a ski resort and retrieve saved bookings
 
 ### Tools Used:
 * Environment: OpenJDK 21
@@ -18,9 +17,9 @@ In this project, we implement the API for the booking system of a Ski Resort cha
 * Technologies: RESTful API, JPA for Data Access Layer
 
 ### Instructions:
-* Clone repository
-* If you have Maven installed, use 'mvn spring-boot:run'
-* The OpenAPI Swagger UI specification will be available at 'http://localhost:8080/swagger-ui/index.html'
+* To run tests, execute - mvn test
+* To run the service, execute - mvn spring-boot:run
+* The OpenAPI Swagger UI specification will be available at http://localhost:8080/swagger-ui/index.html
 
 ## Design
 
